@@ -10,6 +10,7 @@ namespace Business.Constants
         public static string CarNotAdded = "Araba eklenilemedi";
         public static string MaintenanceTime = "Bakım zamanı";
         public static string CarListed = "Arabalar listelendi";
+        public static string CarUpdated = "Araba güncellendi";
 
         public static string ColorAdded = "Renk eklendi";
         public static string ColorDeleted = "Renk eklendi";
@@ -37,5 +38,7 @@ namespace Business.Constants
         public static string CustomerDeleted = "Müşteri listelendi";
         public static string CustomerNameInvalid = "Müşteri ismi geçersiz";
         public static string CustomerListed = "Müşteri listelendi";
+        public static string CheckIfImageLimited= "En fazla 5 resim olabilir";
+        public static string FailAddedImageLimit = "Resim limiti";
     }
 }

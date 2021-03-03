@@ -1,5 +1,6 @@
 using Business.Abstract;
 using Business.Concrete;
+using Core.CrossCuttingConcerns.Validation;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
