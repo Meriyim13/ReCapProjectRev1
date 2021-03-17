@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
 using Core.Utilities.Security.Encyption;
@@ -37,6 +38,7 @@ namespace WebAPI
             //services.AddSingleton<ICarDal, EfCarDal>();
             //services.AddSingleton<IColorService, ColorManager>();
             //services.AddSingleton<IColorDal, EfColorDal>();
+            services.AddCors();
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
@@ -54,7 +56,10 @@ namespace WebAPI
                     };
                 });
 
-            ServiceTool.Create(services);
+            // ServiceTool.Create(services);
+            services.AddDependencyResolvers(new ICoreModule[] {
+               new CoreModule()
+            });
 
 
         }
@@ -70,6 +75,8 @@ namespace WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
